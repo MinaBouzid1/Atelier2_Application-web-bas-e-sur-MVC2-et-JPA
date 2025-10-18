@@ -1,7 +1,7 @@
 # Plateforme E-commerce
 
 ## Description
-MaBoutique est une plateforme e-commerce complète développée en Java EE qui permet aux utilisateurs de parcourir des produits, gérer un panier d'achat et passer des commandes en ligne.
+MaBoutique est une plateforme e-commerce  développée en Java EE qui permet aux utilisateurs de parcourir des produits, gérer un panier d'achat et passer des commandes en ligne.
 
 ## Fonctionnalités Principales
 - Système d'authentification utilisateur (inscription/connexion)
