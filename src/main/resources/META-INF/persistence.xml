@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="https://jakarta.ee/xml/ns/persistence https://jakarta.ee/xml/ns/persistence/persistence_3_2.xsd"
+             version="3.0">
+    <persistence-unit name="mycnx" transaction-type="RESOURCE_LOCAL">
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <!-- Liste TOUTES vos entités -->
+        <class>ma.fstt.ecom.model.Internaute</class>
+        <class>ma.fstt.ecom.model.Produit</class>
+        <class>ma.fstt.ecom.model.Categorie</class>
+        <class>ma.fstt.ecom.model.Commande</class>
+        <class>ma.fstt.ecom.model.LigneCommande</class>
+        <class>ma.fstt.ecom.model.Panier</class>
+        <class>ma.fstt.ecom.model.LignePanier</class>
+
+
+        <exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+        <properties>
+            <!-- Configuration MySQL -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/ecommerce_db?useSSL=false&amp;serverTimezone=UTC"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+
+            <!-- Forcer MySQL et désactiver H2 -->
+            <property name="eclipselink.target-database" value="MySQL"/>
+
+            <!-- Génération DDL -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="jakarta.persistence.schema-generation.create-source" value="metadata"/>
+            <property name="jakarta.persistence.schema-generation.drop-source" value="metadata"/>
+
+            <!-- Logging SQL -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+            <property name="eclipselink.logging.level.sql" value="FINE"/>
+            <property name="eclipselink.logging.parameters" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
